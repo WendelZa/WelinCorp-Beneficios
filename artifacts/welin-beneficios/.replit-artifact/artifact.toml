@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "WELIN Benefícios"
+description = "Site responsivo de apresentação e solicitação de propostas do cartão pré-pago de Refeição e Alimentação da WELIN Corporation para pequenas e médias empresas."
+version = "1.0.0"
+id = "artifacts/welin-beneficios"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21739
+
+[services.development]
+run = "pnpm --filter @workspace/welin-beneficios run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/welin-beneficios", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/welin-beneficios/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21739"
+BASE_PATH = "/"
