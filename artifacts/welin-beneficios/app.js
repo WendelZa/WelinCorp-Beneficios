@@ -20,6 +20,20 @@ navigation.querySelectorAll("a").forEach((link) => {
   });
 });
 
+// Keep in-page navigation smooth while honoring reduced-motion preferences.
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href")?.slice(1);
+    const target = targetId ? document.getElementById(targetId) : null;
+    if (!target) return;
+
+    event.preventDefault();
+    history.pushState(null, "", `#${targetId}`);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  });
+});
+
 const form = document.querySelector("#proposal-form");
 const feedback = document.querySelector("#form-feedback");
 const phone = document.querySelector("#phone");
