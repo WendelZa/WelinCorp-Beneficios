@@ -1,0 +1,99 @@
+Adicione ao site WELIN Benefícios as seções e páginas abaixo. Mantenha o código existente intacto — só crie/acrescente o que falta.
+
+---
+
+📄 PÁGINA 1 — Perguntas Frequentes (FAQ)
+Coloque entre "Como Funciona" e "Solicitar Proposta" — id="faq"
+
+Título: Dúvidas comuns
+Subtítulo: Respostas para as perguntas mais frequentes
+
+Perguntas:
+1. O que é o WELIN Benefícios?
+> É um cartão pré-pago de Refeição e Alimentação para sua empresa. Simples, sem taxas escondidas e feito para pequenos e médios negócios.
+
+2. Existe taxa de adesão ou mensalidade?
+> Não. Não cobramos taxa de adesão nem mensalidade. Você só paga pelo que usar — sem surpresas no fim do mês.
+
+3. Como funciona o modelo pré-pago?
+> Você carrega os valores que quer disponibilizar para sua equipe e eles usam conforme precisam. Sem risco de gastar mais do que planejou.
+
+4. Onde o cartão é aceito?
+> Aceito em milhares de estabelecimentos em todo o Brasil — restaurantes, mercados, lanchonetes e apps de entrega credenciados.
+
+5. Quanto tempo leva para começar a usar?
+> Sua empresa está pronta em até 24 horas após o cadastro. Os cartões virtuais já funcionam na hora.
+
+6. Os saldos expiram?
+> Sim, conforme a legislação vigente. O prazo de validade aparece informado no app e no extrato.
+
+7. Posso usar para funcionários CLT e prestadores de serviço?
+> Sim! Qualquer pessoa com CPF pode receber e usar o WELIN Benefícios.
+
+---
+
+📄 PÁGINA 2 — Termos de Uso
+Arquivo: termos.html
+- Cabeçalho igual ao site principal
+- Título: Termos de Uso — WELIN Benefícios
+- Seções: Aceitação dos Termos, Serviços, Responsabilidades da Empresa, Uso do Cartão, Pagamentos e Recargas, Cancelamento, Alterações, Contato
+- Rodapé igual ao site principal
+
+---
+
+📄 PÁGINA 3 — Política de Privacidade
+Arquivo: privacidade.html
+- Cabeçalho igual ao site principal
+- Título: Política de Privacidade — WELIN Benefícios
+- Seções: Introdução, Dados que Coletamos, Como Usamos os Dados, Compartilhamento, Segurança, Seus Direitos, Atualizações, Contato
+- Rodapé igual ao site principal
+
+---
+
+📄 PÁGINA 4 — Acesso da Empresa
+Arquivo: login-empresa.html
+- Cabeçalho simples
+- Título: Acesso da Empresa — WELIN Benefícios
+- Formulário: E-mail ou CNPJ + Senha
+- Botão: Entrar
+- Links: Esqueci minha senha | Criar conta
+- Rodapé simples
+
+---
+
+📄 PÁGINA 5 — App para Colaboradores
+Arquivo: app-colaborador.html
+- Cabeçalho igual ao site principal
+- Título: Seu benefício na palma da mão
+- Subtítulo: Acesse seu saldo, extrato e cartão virtual pelo app WELIN
+- Seções:
+  📱 O que você pode fazer no app:
+  • Ver saldo de Refeição e Alimentação
+  • Acessar cartão virtual para pagamentos
+  • Consultar extrato em tempo real
+  • Bloquear e desbloquear cartão
+  • Receber notificações de uso
+  📲 Como baixar: Disponível na App Store e Google Play
+- Botões: Baixar na App Store | Baixar no Google Play
+- Rodapé igual ao site principal
+
+---
+
+🔗 ATUALIZAR LINKS NO RODAPÉ
+Adicione estes links no rodapé de todas as páginas:
+- Perguntas Frequentes → #faq
+- Termos de Uso → termos.html
+- Política de Privacidade → privacidade.html
+- Acesso da Empresa → login-empresa.html
+- App para Colaboradores → app-colaborador.html
+- Central de Ajuda
+- Contato → #contato
+
+---
+
+🎨 ESTILO PADRÃO
+- Cores: #0A2540, #2563EB, #10B981
+- Fonte: Inter
+- Mobile-first, responsivo
+- Mesmo design do site existente
+- Sem imagens externas

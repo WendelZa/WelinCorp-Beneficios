@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A2540" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%230A2540'/%3E%3Ctext x='7' y='29' font-size='27' font-family='Arial,sans-serif' font-weight='700' fill='%2310B981'%3EW%3C/text%3E%3C/svg%3E" />
+    <title>Acesso da Empresa — WELIN Benefícios</title>
+    <meta name="description" content="Página de acesso da empresa WELIN Benefícios. Autenticação ainda não conectada." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="support-page">
+    <header class="support-header">
+      <a class="brand" href="index.html#inicio" aria-label="WELIN Benefícios, início">
+        <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-w"></i></span>
+        <span class="brand-copy"><span>WELIN Corporation</span><strong>WELIN Benefícios</strong></span>
+      </a>
+    </header>
+    <main class="support-main">
+      <div class="support-heading">
+        <span class="eyebrow">Portal da empresa</span>
+        <h1>Acesso da Empresa — WELIN Benefícios</h1>
+        <p>Entre para acompanhar a gestão dos benefícios da sua equipe.</p>
+      </div>
+      <section class="access-panel" aria-labelledby="access-title">
+        <h2 id="access-title">Acesse sua conta</h2>
+        <form id="company-login-form">
+          <div class="access-field">
+            <label for="company-identifier">E-mail ou CNPJ</label>
+            <input id="company-identifier" name="identifier" type="text" autocomplete="username" placeholder="voce@empresa.com.br ou CNPJ" required />
+          </div>
+          <div class="access-field">
+            <label for="company-password">Senha</label>
+            <input id="company-password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <button class="button button-primary" type="submit">Entrar</button>
+          <div class="access-actions">
+            <a href="#login-feedback" data-access-action="reset">Esqueci minha senha</a>
+            <a href="#login-feedback" data-access-action="create">Criar conta</a>
+          </div>
+        </form>
+        <p class="access-notice">Acesso, recuperação de senha e cadastro ainda precisam ser conectados. Esta página não transmite nem armazena credenciais; não insira uma senha real.</p>
+        <p class="access-notice access-feedback" id="login-feedback" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer class="support-footer">
+      <div class="support-footer-inner">
+        <div class="support-footer-brand">
+          <strong>WELIN Corporation</strong>
+          <p>WELIN Benefícios — Refeição &amp; Alimentação Pré-Pago</p>
+          <p>Simples. Para sua empresa e para sua equipe.</p>
+        </div>
+        <nav class="support-footer-links" aria-label="Links do rodapé">
+          <a href="index.html#faq">Perguntas Frequentes</a><a href="termos.html">Termos de Uso</a><a href="privacidade.html">Política de Privacidade</a><a href="login-empresa.html">Acesso da Empresa</a><a href="app-colaborador.html">App para Colaboradores</a><a href="index.html#faq">Central de Ajuda</a><a href="index.html#contato">Contato</a>
+        </nav>
+        <small class="support-copyright">© 2026 WELIN Corporation — Todos os direitos reservados</small>
+      </div>
+    </footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
