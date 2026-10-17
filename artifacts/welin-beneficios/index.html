@@ -208,12 +208,12 @@
           <div class="proposal-copy">
             <span class="eyebrow">Vamos conversar</span>
             <h2>Quer oferecer WELIN Benefícios para sua equipe?</h2>
-            <p>Entraremos em contato em até 24h.</p>
-            <div class="response-note"><i class="fa-regular fa-clock" aria-hidden="true"></i><p><strong>Entraremos em contato em até 24h.</strong></p></div>
+            <p>Registre sua solicitação pelo formulário. O envio de aviso por e-mail à equipe comercial ainda não está configurado.</p>
+            <div class="response-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><p><strong>Seu pedido será registrado no sistema, mas a equipe WELIN não receberá uma notificação por e-mail.</strong></p></div>
           </div>
           <form class="form-card" id="proposal-form" novalidate>
             <h3>Solicitar Proposta</h3>
-            <p>Entraremos em contato em até 24h.</p>
+            <p>As solicitações ficam registradas no sistema. Notificações por e-mail ainda não estão configuradas.</p>
             <div class="form-grid">
               <div class="field"><label for="company-name">Nome Empresa <span class="required">*</span></label><input id="company-name" name="company" autocomplete="organization" required aria-describedby="company-name-error" placeholder="Ex.: Empresa Ltda." /><span id="company-name-error" class="field-error"></span></div>
               <div class="field"><label for="cnpj">CNPJ <span class="required">*</span></label><input id="cnpj" name="cnpj" inputmode="numeric" autocomplete="off" required aria-describedby="cnpj-error" placeholder="00.000.000/0000-00" /><span id="cnpj-error" class="field-error"></span></div>
@@ -223,6 +223,7 @@
               <div class="field"><label for="team-size">Qtd colaboradores <span class="required">*</span></label><select id="team-size" name="team-size" required aria-describedby="team-size-error"><option value="">Selecione</option><option>Até 10</option><option>11 a 50</option><option>51 a 200</option><option>Mais de 200</option></select><span id="team-size-error" class="field-error"></span></div>
               <div class="field full"><label for="message">Mensagem <span class="required">*</span></label><textarea id="message" name="message" required aria-describedby="message-error" placeholder="Como podemos ajudar sua empresa?"></textarea><span id="message-error" class="field-error"></span></div>
             </div>
+            <div class="form-honeypot" aria-hidden="true"><label for="website">Deixe este campo vazio<input id="website" name="website" tabindex="-1" autocomplete="off" /></label></div>
             <button class="button button-primary form-submit" type="submit">Enviar Solicitação <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
             <div class="form-feedback" id="form-feedback" aria-live="polite" tabindex="-1"></div>
           </form>

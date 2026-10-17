@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: proposals
+    description: Solicitações comerciais
 paths:
   /healthz:
     get:
@@ -24,6 +26,36 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /proposals:
+    post:
+      operationId: submitProposal
+      tags: [proposals]
+      summary: Registrar solicitação de proposta
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProposalSubmissionInput"
+      responses:
+        "201":
+          description: Solicitação registrada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProposalSubmissionResult"
+        "400":
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+        "429":
+          description: Muitas solicitações em pouco tempo
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +65,60 @@ components:
           type: string
       required:
         - status
+    ProposalSubmissionInput:
+      type: object
+      required:
+        - companyName
+        - cnpj
+        - contactName
+        - email
+        - phone
+        - employeeCount
+        - message
+      properties:
+        companyName:
+          type: string
+          minLength: 2
+          maxLength: 180
+        cnpj:
+          type: string
+          minLength: 14
+          maxLength: 18
+        contactName:
+          type: string
+          minLength: 2
+          maxLength: 160
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        phone:
+          type: string
+          minLength: 10
+          maxLength: 20
+        employeeCount:
+          type: string
+          enum:
+            - Até 10
+            - 11 a 50
+            - 51 a 200
+            - Mais de 200
+        message:
+          type: string
+          minLength: 2
+          maxLength: 2000
+    ProposalSubmissionResult:
+      type: object
+      required:
+        - received
+      properties:
+        received:
+          type: boolean
+    ApiError:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
 

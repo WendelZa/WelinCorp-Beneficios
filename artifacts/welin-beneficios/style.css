@@ -167,6 +167,8 @@ button { cursor: pointer; }
 .field-error { min-height: 0; color: #B42318; font-size: 11px; }
 .field-error:empty { display: none; }
 .form-submit { width: 100%; margin-top: 19px; }
+.form-submit:disabled { cursor: wait; opacity: .7; transform: none; }
+.form-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .form-privacy { display: flex; justify-content: center; gap: 7px; margin: 11px 0 0; color: #8390A0; font-size: 10px; }
 .form-privacy i { color: var(--green); }
 .form-feedback { display: none; margin-top: 17px; padding: 15px 16px; border: 1px solid #F0D69D; border-radius: 9px; color: #684A0C; background: #FFF8E7; font-size: 13px; line-height: 1.5; }

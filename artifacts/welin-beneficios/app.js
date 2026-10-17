@@ -111,7 +111,7 @@ if (form && feedback) {
     });
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const fields = [...form.querySelectorAll("input[required], select[required], textarea[required]")];
     const valid = fields.map(validateField).every(Boolean);
@@ -125,10 +125,51 @@ if (form && feedback) {
       return;
     }
 
+    const submitButton = form.querySelector('button[type="submit"]');
+    const values = new FormData(form);
+    const payload = {
+      companyName: String(values.get("company") ?? "").trim(),
+      cnpj: String(values.get("cnpj") ?? "").trim(),
+      contactName: String(values.get("name") ?? "").trim(),
+      email: String(values.get("email") ?? "").trim(),
+      phone: String(values.get("phone") ?? "").trim(),
+      employeeCount: String(values.get("team-size") ?? ""),
+      message: String(values.get("message") ?? "").trim(),
+      website: String(values.get("website") ?? ""),
+    };
+
+    if (submitButton) submitButton.disabled = true;
     feedback.className = "form-feedback is-visible";
     feedback.setAttribute("role", "status");
-    feedback.innerHTML = '<strong><i class="fa-solid fa-circle-info" aria-hidden="true"></i>Sua solicitação ainda não foi enviada.</strong> Nenhum dado foi transmitido porque o canal de recebimento ainda não foi configurado. Entre em contato com a WELIN por outro canal para solicitar sua proposta.';
-    feedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    feedback.textContent = "Enviando solicitação…";
+
+    try {
+      const response = await fetch("/api/proposals", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(result.error || "Não foi possível registrar sua solicitação.");
+      }
+
+      feedback.textContent = "Solicitação registrada no sistema. No momento, a equipe WELIN não recebe aviso por e-mail; por isso, não podemos confirmar contato em até 24h.";
+      form.reset();
+      fields.forEach((field) => {
+        field.setAttribute("aria-invalid", "false");
+        const error = document.querySelector(`#${field.id}-error`);
+        if (error) error.textContent = "";
+      });
+    } catch (error) {
+      feedback.setAttribute("role", "alert");
+      feedback.textContent = error instanceof Error
+        ? error.message
+        : "Não foi possível registrar sua solicitação. Tente novamente.";
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+      feedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
   });
 }
 
