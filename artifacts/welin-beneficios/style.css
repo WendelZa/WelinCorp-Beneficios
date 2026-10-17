@@ -330,7 +330,12 @@ button { cursor: pointer; }
 .app-feature-list i { flex: 0 0 20px; margin-top: 4px; color: #07875F; }
 .store-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .store-actions .button { min-width: 160px; }
+.store-actions .store-unavailable { cursor: default; }
 .store-note { margin: 17px 0 0; color: var(--muted); font-size: 12px; }
+.access-approval-notice { display: flex; align-items: flex-start; gap: 12px; margin: 0 0 22px; padding: 16px 18px; border: 1px solid #F1D28B; border-radius: 10px; color: #604A20; background: #FFF8E8; font-size: 14px; line-height: 1.65; }
+.access-approval-notice > i { margin-top: 3px; color: #A66A00; }
+.access-approval-notice p { margin: 0; }
+.access-approval-notice a { color: var(--blue); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .support-header .support-mobile-links { display: flex; flex-wrap: wrap; }
 @media (max-width: 760px) {
   .support-header { align-items: flex-start; flex-direction: column; gap: 13px; padding: 12px 18px; }

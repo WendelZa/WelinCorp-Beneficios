@@ -43,6 +43,29 @@ function digitsOnly(value) {
   return value.replace(/\D/g, "");
 }
 
+function isValidCnpj(value) {
+  const digits = digitsOnly(value);
+  if (digits.length !== 14 || /^(\d)\1{13}$/.test(digits)) return false;
+
+  const calculateDigit = (base, weights) => {
+    const sum = [...base].reduce((total, digit, index) => total + Number(digit) * weights[index], 0);
+    const remainder = sum % 11;
+    return remainder < 2 ? 0 : 11 - remainder;
+  };
+
+  const firstDigit = calculateDigit(digits.slice(0, 12), [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]);
+  const secondDigit = calculateDigit(digits.slice(0, 12) + firstDigit, [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]);
+  return digits.endsWith(`${firstDigit}${secondDigit}`);
+}
+
+function isValidBrazilianPhone(value) {
+  const digits = digitsOnly(value);
+  if (digits.length !== 10 && digits.length !== 11) return false;
+  const areaCode = Number(digits.slice(0, 2));
+  if (areaCode < 11 || areaCode > 99) return false;
+  return digits.length === 11 ? digits[2] === "9" : /^[2-5]/.test(digits.slice(2));
+}
+
 if (form && feedback) {
   const phone = document.querySelector("#phone");
   const cnpj = document.querySelector("#cnpj");
@@ -70,10 +93,10 @@ if (form && feedback) {
       message = "Preencha este campo.";
     } else if (field.type === "email" && field.value && !field.validity.valid) {
       message = "Informe um e-mail válido.";
-    } else if (field.id === "cnpj" && digitsOnly(field.value).length !== 14) {
-      message = "Informe os 14 dígitos do CNPJ.";
-    } else if (field.id === "phone" && digitsOnly(field.value).length < 10) {
-      message = "Informe um telefone com DDD.";
+    } else if (field.id === "cnpj" && !isValidCnpj(field.value)) {
+      message = "Informe um CNPJ válido com 14 dígitos.";
+    } else if (field.id === "phone" && !isValidBrazilianPhone(field.value)) {
+      message = "Informe um telefone válido com DDD.";
     }
 
     field.setAttribute("aria-invalid", message ? "true" : "false");
@@ -104,7 +127,7 @@ if (form && feedback) {
 
     feedback.className = "form-feedback is-visible";
     feedback.setAttribute("role", "status");
-    feedback.innerHTML = '<strong><i class="fa-solid fa-circle-info" aria-hidden="true"></i>Sua solicitação ainda não foi enviada.</strong> Nenhum dado foi transmitido porque o destino de recebimento ainda não está configurado neste site estático. Entre em contato com a WELIN por outro canal para solicitar sua proposta.';
+    feedback.innerHTML = '<strong><i class="fa-solid fa-circle-info" aria-hidden="true"></i>Sua solicitação ainda não foi enviada.</strong> Nenhum dado foi transmitido porque o canal de recebimento ainda não foi configurado. Entre em contato com a WELIN por outro canal para solicitar sua proposta.';
     feedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
   });
 }
