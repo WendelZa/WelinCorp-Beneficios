@@ -23,7 +23,6 @@ export const HealthCheckResponse = zod.object({
 export const submitProposalBodyCompanyNameMin = 2;
 export const submitProposalBodyCompanyNameMax = 180;
 
-export const submitProposalBodyCnpjMin = 14;
 export const submitProposalBodyCnpjMax = 18;
 
 export const submitProposalBodyContactNameMin = 2;
@@ -41,7 +40,7 @@ export const submitProposalBodyMessageMax = 2000;
 
 export const SubmitProposalBody = zod.object({
   "companyName": zod.string().min(submitProposalBodyCompanyNameMin).max(submitProposalBodyCompanyNameMax),
-  "cnpj": zod.string().min(submitProposalBodyCnpjMin).max(submitProposalBodyCnpjMax),
+  "cnpj": zod.string().max(submitProposalBodyCnpjMax).optional(),
   "contactName": zod.string().min(submitProposalBodyContactNameMin).max(submitProposalBodyContactNameMax),
   "email": zod.string().email().max(submitProposalBodyEmailMax),
   "phone": zod.string().min(submitProposalBodyPhoneMin).max(submitProposalBodyPhoneMax),

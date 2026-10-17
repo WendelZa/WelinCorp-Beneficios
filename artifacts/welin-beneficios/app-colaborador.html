@@ -2,71 +2,118 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#0A2540" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%230A2540'/%3E%3Ctext x='7' y='29' font-size='27' font-family='Arial,sans-serif' font-weight='700' fill='%2310B981'%3EW%3C/text%3E%3C/svg%3E" />
-    <title>App para Colaboradores — WELIN Benefícios</title>
-    <meta name="description" content="Conheça o app WELIN Benefícios para colaboradores." />
+    <meta name="description" content="Demonstração do app web WELIN para acompanhar benefícios de Refeição e Alimentação." />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/welin-icon.svg" />
+    <link rel="apple-touch-icon" href="/welin-icon.svg" />
+    <title>App WELIN | Demonstração para colaboradores</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="support-page">
-    <header class="support-header">
-      <a class="brand" href="index.html#inicio" aria-label="WELIN Benefícios, início">
-        <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-w"></i></span>
-        <span class="brand-copy"><span>WELIN Corporation</span><strong>WELIN Benefícios</strong></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-navigation">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
-      <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
-        <a href="index.html#empresa">Para Empresas</a><a href="index.html#equipe">Para Equipes</a><a href="index.html#planos">Planos</a><a href="index.html#como-funciona">Como Funciona</a><a href="index.html#faq">FAQ</a><a class="nav-cta" href="index.html#contato">Solicitar Proposta</a>
-      </nav>
-    </header>
-    <main class="support-main">
-      <div class="support-heading">
-        <span class="eyebrow">Para sua equipe</span>
-        <h1>Seu benefício na palma da mão</h1>
-        <p>Acesse seu saldo, extrato e cartão virtual pelo app WELIN</p>
-      </div>
-      <section class="app-promo" aria-label="Recursos do app WELIN">
-        <h2>O que você pode fazer no app:</h2>
-        <ul class="app-feature-list">
-          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Ver saldo de Refeição e Alimentação</span></li>
-          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Acessar cartão virtual para pagamentos</span></li>
-          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Consultar extrato em tempo real</span></li>
-          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Bloquear e desbloquear cartão</span></li>
-          <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Receber notificações de uso</span></li>
-        </ul>
-        <h2>Como baixar</h2>
-        <p>Em breve disponível nas lojas. Procure por WELIN Benefícios na App Store e Google Play.</p>
-        <div class="store-actions">
-          <span class="button button-dark store-unavailable"><i class="fa-brands fa-apple" aria-hidden="true"></i> App Store — em breve</span>
-          <span class="button button-dark store-unavailable"><i class="fa-brands fa-google-play" aria-hidden="true"></i> Google Play — em breve</span>
-        </div>
-        <p class="store-note">Os links diretos oficiais serão publicados quando os aplicativos estiverem disponíveis nas lojas.</p>
+  <body class="welin-app-page">
+    <main class="mobile-app-shell">
+      <div class="app-demo-ribbon"><i class="fa-solid fa-flask" aria-hidden="true"></i> Demonstração fictícia · nenhum dado é enviado</div>
+      <section class="app-login-screen" id="app-login-screen" aria-labelledby="app-welcome-title">
+        <a class="app-brand" href="index.html"><span class="brand-mark"><i class="fa-solid fa-w" aria-hidden="true"></i></span><span>WELIN <small>BENEFÍCIOS</small></span></a>
+        <div class="app-welcome-art" aria-hidden="true"><div class="welcome-orbit"><i class="fa-solid fa-utensils"></i><i class="fa-solid fa-basket-shopping"></i></div><div class="welcome-card"><i class="fa-solid fa-w"></i><span>Refeição + Alimentação</span><strong>Seu benefício, por perto.</strong></div></div>
+        <div class="app-welcome-copy"><span class="eyebrow">Bem-vindo(a)</span><h1 id="app-welcome-title">Benefício simples. <span>Dia mais leve.</span></h1><p>Veja como seria acompanhar seu saldo, cartão e movimentações no app WELIN.</p></div>
+        <div class="app-safety-note"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Use apenas o acesso de demonstração. Não informe seus dados reais.</span></div>
+        <button class="button button-primary app-login-button" type="button" data-demo-start>Começar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <a class="app-back-link" href="area-colaborador.html">Conhecer a área do colaborador</a>
       </section>
-    </main>
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-main">
-          <div class="footer-brand">
-            <a class="brand" href="index.html#inicio" aria-label="WELIN Benefícios, início">
-              <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-w"></i></span>
-              <span class="brand-copy"><span>WELIN Corporation</span><strong>WELIN Benefícios</strong></span>
-            </a>
-            <p>WELIN Benefícios — Refeição &amp; Alimentação Pré-Pago</p>
-            <p>Simples. Para sua empresa e para sua equipe.</p>
-          </div>
-          <div class="footer-links">
-            <div class="footer-col"><strong>WELIN Benefícios</strong><a href="index.html#empresa">Sobre</a><a href="index.html#planos">Planos</a><a href="index.html#como-funciona">Como Funciona</a><a href="index.html#faq">Perguntas Frequentes</a><a href="index.html#faq">Central de Ajuda</a><a href="index.html#contato">Contato</a></div>
-            <div class="footer-col"><strong>Informações</strong><a href="termos.html">Termos de Uso</a><a href="privacidade.html">Política de Privacidade</a></div>
-            <div class="footer-col"><strong>Acessos</strong><a href="login-empresa.html">Acesso da Empresa</a><a href="app-colaborador.html">App para Colaboradores</a></div>
-          </div>
+
+      <section class="app-access-screen" id="app-access-screen" hidden aria-labelledby="app-access-title">
+        <button class="app-back-button" type="button" data-demo-back><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+        <span class="app-overline">ACESSO DE DEMONSTRAÇÃO</span>
+        <h1 id="app-access-title">Acesse seu benefício</h1>
+        <p class="app-muted">Entre somente com os dados fictícios abaixo. Não informe seu CPF ou código real.</p>
+        <div class="app-access-fields">
+          <label for="demo-cpf">CPF de demonstração</label>
+          <input id="demo-cpf" value="000.000.000-00" readonly aria-readonly="true" />
+          <label for="demo-code">Código de acesso demonstrativo</label>
+          <input id="demo-code" value="DEMO-2026" readonly aria-readonly="true" />
         </div>
-        <div class="footer-bottom"><span>© 2026 WELIN Corporation — Todos os direitos reservados</span></div>
-      </div>
-    </footer>
-    <script type="module" src="app.js"></script>
+        <button class="button button-primary app-login-button" type="button" data-demo-login>Entrar na demonstração <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <p class="app-access-footnote">Este acesso não valida pessoas nem envia ou armazena informações.</p>
+      </section>
+
+      <section class="app-dashboard" id="app-dashboard" hidden aria-label="Aplicativo demonstrativo">
+        <header class="app-topbar">
+          <a class="app-brand" href="index.html"><span class="brand-mark"><i class="fa-solid fa-w" aria-hidden="true"></i></span><span>WELIN <small>BENEFÍCIOS</small></span></a>
+          <button class="app-icon-button" type="button" data-app-help aria-label="Abrir ajuda"><i class="fa-regular fa-circle-question"></i></button>
+        </header>
+        <section class="app-home-view app-view is-active" data-view="inicio">
+          <div class="app-greeting"><div><span class="app-overline">SEXTA-FEIRA, 16 DE OUTUBRO</span><h1>Olá, Marina <span>!</span></h1><p>Seu benefício está por aqui.</p></div><span class="demo-avatar">MA</span></div>
+          <div class="app-balance-card">
+            <div class="balance-card-head"><span>Saldo total disponível</span><button type="button" class="balance-eye" aria-label="Ocultar saldos" data-balance-toggle><i class="fa-regular fa-eye"></i></button></div>
+            <strong class="balance-total" data-balance>R$ 500,00</strong>
+            <div class="balance-split">
+              <div><span class="balance-icon meal"><i class="fa-solid fa-utensils"></i></span><small>Refeição · válido até 31/12/2026</small><strong data-balance>R$ 250,00</strong></div>
+              <div><span class="balance-icon grocery"><i class="fa-solid fa-basket-shopping"></i></span><small>Alimentação · válido até 31/12/2026</small><strong data-balance>R$ 250,00</strong></div>
+            </div>
+            <span class="fictional-data">Valores fictícios para demonstração</span>
+          </div>
+          <div class="app-quick-actions" aria-label="Ações rápidas">
+            <button type="button" data-app-nav="cartao"><i class="fa-regular fa-credit-card"></i><span>Ver cartão</span></button>
+            <button type="button" data-app-nav="extrato"><i class="fa-solid fa-list"></i><span>Extrato</span></button>
+            <button type="button" data-card-lock><i class="fa-solid fa-lock"></i><span>Bloquear cartão</span></button>
+          </div>
+          <div class="app-section-title"><div><span class="app-overline">SEU CARTÃO</span><h2>Pronto para usar</h2></div><button type="button" class="app-text-button" data-app-nav="cartao">Ver cartão <i class="fa-solid fa-arrow-right"></i></button></div>
+          <button type="button" class="virtual-card-preview" data-app-nav="cartao" aria-label="Ver detalhes do cartão virtual">
+            <span class="virtual-card-brand">WELIN <i class="fa-solid fa-w"></i></span><span class="virtual-card-chip"></span><span class="virtual-card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 1234</span><span class="virtual-card-bottom"><span>MARINA DEMO</span><span>VIRTUAL</span></span>
+          </button>
+          <div class="app-section-title statement-heading"><div><span class="app-overline">ACOMPANHE</span><h2>Últimas movimentações</h2></div><button type="button" class="app-text-button" data-app-nav="extrato">Ver extrato <i class="fa-solid fa-arrow-right"></i></button></div>
+          <div class="app-transaction-list compact-transactions" data-transactions></div>
+          <div class="app-demo-disclaimer"><i class="fa-solid fa-circle-info"></i> Este app é apenas uma demonstração. Nenhuma compra ou operação é real.</div>
+        </section>
+
+        <section class="app-view app-detail-view" data-view="cartao" hidden>
+          <button class="app-back-button" type="button" data-app-nav="inicio"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+          <span class="app-overline">CARTÃO VIRTUAL</span><h1>Seu cartão</h1><p class="app-muted">Dados ilustrativos. Não funcionam para pagamento.</p>
+          <div class="virtual-card-large"><span class="virtual-card-brand">WELIN <i class="fa-solid fa-w"></i></span><span class="virtual-card-chip"></span><span class="virtual-card-number" data-card-number-display>•••• &nbsp; •••• &nbsp; •••• &nbsp; ••••</span><span class="virtual-card-bottom"><span>MARINA DEMO</span><span>VIRTUAL</span></span></div>
+          <div class="card-details"><div><small>Número</small><strong>•••• •••• •••• <span data-card-last-four>••••</span></strong></div><div><small>Validade</small><strong>12/28 · fictícia</strong></div><div><small>Código de segurança</small><strong>•••</strong></div></div>
+          <div class="app-card-actions"><button type="button" data-card-reveal>Mostrar final do cartão</button><button type="button" data-card-copy>Copiar número mascarado</button><button type="button" data-card-lock>Bloquear cartão</button></div>
+          <p class="app-card-status" data-card-status role="status">Cartão demonstrativo · não funciona para pagamentos</p>
+          <div class="app-safety-note"><i class="fa-solid fa-lock"></i><span>Cartão demonstrativo mascarado. Não existe número completo, CVV ou controle de cartão nesta experiência.</span></div>
+        </section>
+
+        <section class="app-view app-detail-view" data-view="extrato" hidden>
+          <span class="app-overline">SEU HISTÓRICO</span><h1>Extrato</h1><p class="app-muted">Movimentações fictícias, em ordem cronológica.</p>
+          <div class="statement-filters" role="group" aria-label="Filtrar período">
+            <button type="button" class="is-selected" data-filter="7">7 dias</button><button type="button" data-filter="month">Este mês</button><button type="button" data-filter="all">Tudo</button>
+          </div>
+          <div class="app-transaction-list full-transactions" data-transactions></div>
+          <p class="fictional-data">Nenhuma transação apresentada corresponde a uma compra real.</p>
+        </section>
+
+        <section class="app-view app-detail-view" data-view="onde" hidden>
+          <span class="app-overline">ONDE USAR</span><h1>Seu benefício acompanha você.</h1>
+          <p class="app-muted">O cartão WELIN pode ser usado em estabelecimentos credenciados de alimentação em todo o Brasil.</p>
+          <div class="use-category-list"><article><span class="use-icon green"><i class="fa-solid fa-utensils"></i></span><div><h2>Refeição</h2><p>Restaurantes, lanchonetes e cafés.</p></div><i class="fa-solid fa-arrow-right"></i></article><article><span class="use-icon blue"><i class="fa-solid fa-basket-shopping"></i></span><div><h2>Alimentação</h2><p>Mercados, hortifrutis e mercearias.</p></div><i class="fa-solid fa-arrow-right"></i></article></div>
+          <div class="app-demo-disclaimer">A aceitação pode variar conforme credenciamento e categoria do estabelecimento. Consulte os canais oficiais quando disponíveis.</div>
+        </section>
+
+        <section class="app-view app-detail-view" data-view="ajuda" hidden>
+          <span class="app-overline">ESTAMOS POR AQUI</span><h1>Ajuda</h1><p class="app-muted">Esta versão é uma demonstração. Não use para solicitar bloqueio de um cartão real.</p>
+          <div class="help-card"><i class="fa-regular fa-comments"></i><div><h2>Fale com a WELIN</h2><p>Para dúvidas sobre o produto, acesse a página de contato.</p><a href="index.html#contato">Ir para contato <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+          <div class="help-card"><i class="fa-regular fa-circle-question"></i><div><h2>Perguntas frequentes</h2><p>Veja respostas sobre benefícios, cadastro e uso.</p><a href="index.html#faq">Acessar perguntas <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+          <div class="help-card"><i class="fa-solid fa-location-dot"></i><div><h2>Onde usar</h2><p>Confira as categorias de uso na demonstração.</p><button class="app-text-button" type="button" data-app-nav="onde">Ver categorias <i class="fa-solid fa-arrow-right"></i></button></div></div>
+          <div class="help-card"><i class="fa-solid fa-triangle-exclamation"></i><div><h2>Perdi meu cartão?</h2><p>Este cartão é fictício; o bloqueio não atinge cartões reais.</p><button class="app-text-button" type="button" data-card-lock>Bloquear agora <i class="fa-solid fa-lock"></i></button></div></div>
+          <button class="button button-secondary app-logout" type="button" data-demo-logout>Sair da demonstração</button>
+        </section>
+        <nav class="app-bottom-nav" aria-label="Navegação do aplicativo">
+          <button class="is-active" type="button" data-app-nav="inicio"><i class="fa-solid fa-house"></i><span>Início</span></button>
+          <button type="button" data-app-nav="cartao"><i class="fa-regular fa-credit-card"></i><span>Cartão</span></button>
+          <button type="button" data-app-nav="extrato"><i class="fa-solid fa-arrow-right-arrow-left"></i><span>Extrato</span></button>
+          <button type="button" data-app-nav="ajuda"><i class="fa-regular fa-circle-user"></i><span>Ajuda</span></button>
+        </nav>
+      </section>
+      <div class="app-toast" id="app-toast" role="status" aria-live="polite"></div>
+    </main>
+    <aside class="app-install-tip"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i><p><strong>Como usar no celular</strong><br />Abra este endereço no navegador do celular, toque em “Adicionar à tela inicial” e use como um app, sem baixar nada nas lojas.</p></aside>
+    <footer class="app-page-footer"><a href="index.html">WELIN Benefícios</a><nav aria-label="Links úteis"><a href="index.html#faq">Perguntas Frequentes</a><a href="termos.html">Termos de Uso</a><a href="privacidade.html">Política de Privacidade</a><a href="login-empresa.html">Acesso da Empresa</a><a href="area-colaborador.html">Sou Colaborador</a><a href="index.html#contato">Contato</a></nav></footer>
+    <script type="module" src="/app.js"></script>
   </body>
 </html>

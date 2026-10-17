@@ -70,6 +70,8 @@ export default defineConfig({
         privacidade: path.resolve(import.meta.dirname, 'privacidade.html'),
         loginEmpresa: path.resolve(import.meta.dirname, 'login-empresa.html'),
         appColaborador: path.resolve(import.meta.dirname, 'app-colaborador.html'),
+        minhaEmpresa: path.resolve(import.meta.dirname, 'minha-empresa.html'),
+        areaColaborador: path.resolve(import.meta.dirname, 'area-colaborador.html'),
       },
     },
   },

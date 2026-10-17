@@ -69,7 +69,6 @@ components:
       type: object
       required:
         - companyName
-        - cnpj
         - contactName
         - email
         - phone
@@ -82,7 +81,6 @@ components:
           maxLength: 180
         cnpj:
           type: string
-          minLength: 14
           maxLength: 18
         contactName:
           type: string

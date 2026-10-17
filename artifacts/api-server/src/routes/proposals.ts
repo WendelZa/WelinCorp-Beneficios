@@ -46,7 +46,8 @@ router.post("/proposals", async (req, res): Promise<void> => {
     return;
   }
 
-  if (!hasValidCnpj(parsed.data.cnpj)) {
+  const cnpj = parsed.data.cnpj?.trim() ?? "";
+  if (cnpj && !hasValidCnpj(cnpj)) {
     res.status(400).json({ error: "Informe um CNPJ válido." });
     return;
   }
@@ -70,7 +71,7 @@ router.post("/proposals", async (req, res): Promise<void> => {
 
   await db.insert(proposalSubmissionsTable).values({
     companyName: parsed.data.companyName.trim(),
-    cnpj: parsed.data.cnpj.trim(),
+    cnpj: cnpj || null,
     contactName: parsed.data.contactName.trim(),
     email: parsed.data.email.trim().toLowerCase(),
     phone: parsed.data.phone.trim(),

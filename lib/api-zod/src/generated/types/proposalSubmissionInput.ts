@@ -13,11 +13,8 @@ export interface ProposalSubmissionInput {
      * @maxLength 180
      */
   companyName: string;
-  /**
-     * @minLength 14
-     * @maxLength 18
-     */
-  cnpj: string;
+  /** @maxLength 18 */
+  cnpj?: string;
   /**
      * @minLength 2
      * @maxLength 160

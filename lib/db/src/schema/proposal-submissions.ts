@@ -5,7 +5,7 @@ import { z } from "zod/v4";
 export const proposalSubmissionsTable = pgTable("proposal_submissions", {
   id: serial("id").primaryKey(),
   companyName: text("company_name").notNull(),
-  cnpj: text("cnpj").notNull(),
+  cnpj: text("cnpj"),
   contactName: text("contact_name").notNull(),
   email: text("email").notNull(),
   phone: text("phone").notNull(),
